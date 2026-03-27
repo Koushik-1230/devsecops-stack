@@ -12,3 +12,12 @@ prometheus:
     enabled: true
     interval: 30s
     scrapeTimeout: 10s
+
+rbac:
+  enabled: true
+
+  namespace: kube-system
+
+  serviceAccountName: metrics-server-sa
+  roleName: metrics-server-role
+  bindingName: metrics-server-binding
