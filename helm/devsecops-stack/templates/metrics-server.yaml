@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: metrics-server
-        image: k8s.gcr.io/metrics-server/metrics-server:v0.6.3
+        image: registry.k8s.io/metrics-server/metrics-server:v0.6.3
         args:
         - --kubelet-insecure-tls
         - --kubelet-preferred-address-types=InternalIP,ExternalIP,Hostname
