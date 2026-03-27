@@ -14,6 +14,7 @@ spec:
     spec:
       containers:
       - name: metrics-server
+        namespace: kube-system
         image: registry.k8s.io/metrics-server/metrics-server:v0.6.3
         args:
         - --kubelet-insecure-tls
