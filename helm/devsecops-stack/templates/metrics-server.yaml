@@ -27,4 +27,5 @@ spec:
             mountPath: /tmp
       volumes:
         - name: tmp-dir
-          emptyDir: {}  
+          emptyDir: {}
+      serviceAccountName: metrics-server-sa  
