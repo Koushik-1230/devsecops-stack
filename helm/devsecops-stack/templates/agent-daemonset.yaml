@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: devsecops-agent
+spec:
+  selector:
+    matchLabels:
+      app: agent
+  template:
+    metadata:
+      labels:
+        app: agent
+    spec:
+      serviceAccountName: agent-sa
+      containers:
+      - name: agent
+        image: {{ .Values.agent.image }}
+        env:
+        - name: BACKEND_URL
+          value: {{ .Values.backend.url }}
+        - name: CLUSTER_TOKEN
+          valueFrom:
+            secretKeyRef:
+              name: agent-secret
+              key: CLUSTER_TOKEN
+        - name: CLUSTER_NAME
+          value: {{ .Values.cluster.name | quote }}
+        - name: PROM_URL
+          value: "http://{{ .Release.Name }}-kube-prometheus-stack-prometheus:9090"

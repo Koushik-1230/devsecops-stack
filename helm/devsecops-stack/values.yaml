@@ -1,0 +1,15 @@
+cluster:
+  name: dev-cluster
+
+backend:
+  url: "http://backend-service:8000/ingest". ##to be replaced with the actual backend service URL
+
+agent:
+  image: your-dockerhub-username/agent:latest ##to be replaced with the actual agent image  
+
+prometheus:
+  enabled: true
+  serviceMonitor:
+    enabled: true
+    interval: 30s
+    scrapeTimeout: 10s

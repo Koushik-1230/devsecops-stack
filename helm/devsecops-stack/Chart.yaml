@@ -1,0 +1,8 @@
+apiVersion: v2
+name: devsecops-stack
+description: A Helm chart for Kubernetes
+version: 1.0.0
+dependencies:
+  - name: kube-prometheus-stack
+    version: 56.0.0
+    repository: https://prometheus-community.github.io/helm-charts
