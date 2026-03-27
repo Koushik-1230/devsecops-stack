@@ -2,10 +2,9 @@ cluster:
   name: dev-cluster
 
 backend:
-  url: "http://backend-service:8000/ingest". ##to be replaced with the actual backend service URL
-
+  url: "https://super-potato-jx4p9xq9p4rf549q-8000.app.github.dev/ingest"
 agent:
-  image: your-dockerhub-username/agent:latest ##to be replaced with the actual agent image  
+  image: kubekoushik/agent:v1 
 
 prometheus:
   enabled: true
