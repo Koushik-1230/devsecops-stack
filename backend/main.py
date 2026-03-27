@@ -70,6 +70,7 @@ def ingest(data:dict, authorization:str= Header(None)):
         "timestamp": data.get("timestamp")
     }
     METRICS_DB.append(record)
+    print(f"Received metrics from {cluster['name']}: {record}")
 
     return {"status": "stored", "cluster": cluster["name"]}
 

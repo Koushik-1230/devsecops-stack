@@ -26,4 +26,4 @@ spec:
         - name: CLUSTER_NAME
           value: {{ .Values.cluster.name | quote }}
         - name: PROM_URL
-          value: "http://{{ .Release.Name }}-kube-prometheus-stack-prometheus:9090"
+          value: "http://devsecops-stack-kube-prome-prometheus:9090"
